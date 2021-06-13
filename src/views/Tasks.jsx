@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CreateTask from "../components/CreateTask";
+import TasksList from "../components/TasksList";
 
 const Tasks = () => {
   const [taskList, setTaskList] = useState([]);
@@ -17,8 +18,11 @@ const Tasks = () => {
     <div>
       <h1>Lista de Tareas</h1>
       <CreateTask saveNewTask={saveNewTask} />
+      <TasksList taskList={taskList} />
     </div>
   );
 };
 
 export default Tasks;
+
+// keys, no es recomendable usar index, podes usar el id o una combinación entre index y otro elemento
