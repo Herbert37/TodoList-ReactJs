@@ -6,18 +6,21 @@ const Tasks = () => {
   const [taskList, setTaskList] = useState([]);
 
   const saveNewTask = (taskDescription) => {
+    let datetime = new Date();
     const newTasks = taskList.concat({
       description: taskDescription,
-      date: new Date(),
+      date: `${datetime.getDate()}/${datetime.getMonth()}/${datetime.getFullYear()}, ${datetime.getHours()}:${datetime.getMinutes()}`,
       isCompleted: false,
     });
     setTaskList(newTasks);
   };
 
   return (
-    <div>
-      <h1>Lista de Tareas</h1>
+    <div class="container">
+      <h2>Todo List</h2>
+      <br />
       <CreateTask saveNewTask={saveNewTask} />
+      <br />
       <TasksList taskList={taskList} />
     </div>
   );
