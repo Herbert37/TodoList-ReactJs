@@ -10,18 +10,18 @@ const CreateTask = ({ saveNewTask }) => {
 
   return (
     <>
-      <div class="row justify-content-center">
-        <div class="col-sm-6">
-          <div class="input-group">
+      <div className="row justify-content-center">
+        <div className="col-sm-6">
+          <div className="input-group">
             <input
               type="text"
               onChange={onChangeTask}
-              class="form-control"
+              className="form-control"
               placeholder="Add a new task to the List"
             />
             <button
               onClick={() => saveNewTask(task)}
-              class="btn btn-outline-primary"
+              className="btn btn-outline-primary"
             >
               Add
             </button>
