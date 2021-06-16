@@ -22,10 +22,10 @@ const Tasks = () => {
     taskList[index].isCompleted = true;
     setTaskList([...taskList]);
   };
-  /*const deleteTask = (index) =>{
-    taskList.splice(index);
+  const deleteTask = (index) => {
+    taskList.splice(index, 1);
     setTaskList([...taskList]);
-  }*/
+  };
 
   return (
     <div className="container">
@@ -33,7 +33,11 @@ const Tasks = () => {
       <br />
       <CreateTask saveNewTask={saveNewTask} />
       <br />
-      <TasksList taskList={taskList} changeTaskStatus={changeTaskStatus} />
+      <TasksList
+        taskList={taskList}
+        changeTaskStatus={changeTaskStatus}
+        deleteTask={deleteTask}
+      />
     </div>
   );
 };
