@@ -1,7 +1,8 @@
 import React from "react";
 import CompleteTask from "../CompleteTask";
+import DeleteTask from "../DeleteTask";
 
-const TasksList = ({ taskList, changeTaskStatus }) => {
+const TasksList = ({ taskList, changeTaskStatus, deleteTask }) => {
   return (
     <div className="row justify-content-center">
       <div className="col-sm-6">
@@ -14,6 +15,9 @@ const TasksList = ({ taskList, changeTaskStatus }) => {
                 {...item}
                 changeTaskStatus={() => changeTaskStatus(index)}
               />
+              <br />
+              <br />
+              <DeleteTask {...item} deleteTask={() => deleteTask(index)} />
             </div>
           </div>
         ))}
